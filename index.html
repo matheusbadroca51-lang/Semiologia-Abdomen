@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Semiologia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- TELA INICIAL: QR CODE -->
+        <section id="tela-inicial" class="tela-inicial">
+            <img
+                src="qrcode.png"
+                alt="QR Code"
+                class="imagem-qrcode"
+                onclick="abrirIdiomas()">
+
+            <div id="temporizador-inicial" class="temporizador-inicial">05:00</div>
+        </section>
+
+        <!-- TELA DE ESCOLHA DO IDIOMA -->
+        <section id="tela-idioma" class="tela-idioma escondido">
+
+            <div class="logo-medico">🩺</div>
+
+            <h1>Simulado de Semiologia</h1>
+
+            <p class="subtitulo">
+                Manobras e sinais do exame físico
+            </p>
+
+            <h2>Escolha o idioma / Elige el idioma</h2>
+
+            <div class="idiomas">
+
+                <button
+                    id="portugues"
+                    class="botao-idioma"
+                    onclick="selecionarIdioma('pt')">
+                    🇧🇷 Português
+                </button>
+
+                <button
+                    id="espanhol"
+                    class="botao-idioma"
+                    onclick="selecionarIdioma('es')">
+                    🇪🇸 Español
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- JOGO -->
+        <section id="tela-jogo" class="escondido" style="display: none;">
+
+            <header class="cabecalho">
+                <h1 id="titulo-jogo">🩺 Simulado de Semiologia</h1>
+                <p id="subtitulo-jogo">Manobras e sinais do exame físico</p>
+            </header>
+
+            <section class="status">
+
+                <div>
+                    <span id="rotulo-questao">Questão</span>
+                    <strong id="numero-questao">1/1</strong>
+                </div>
+
+                <div>
+                    <span id="rotulo-pontos">Pontos</span>
+                    <strong id="pontuacao">0</strong>
+                </div>
+
+                <div>
+                    <span id="rotulo-grupo">Grupo</span>
+                    <strong id="grupo-atual">Peritônio</strong>
+                </div>
+
+            </section>
+
+            <section class="card">
+
+                <div class="tipo-questao" id="tipo-questao">
+                    Questão
+                </div>
+
+                <h2 id="pergunta">
+                    Carregando pergunta...
+                </h2>
+
+                <div id="alternativas" class="alternativas"></div>
+
+                <div id="feedback" class="feedback"></div>
+
+                <button id="proxima" class="btn-proxima" disabled>
+                    Próxima questão →
+                </button>
+
+            </section>
+
+            <section id="resultado-final" class="resultado-final escondido">
+
+                <h2>🏆 Simulado finalizado!</h2>
+
+                <p id="mensagem-final"></p>
+
+                <div class="nota">
+                    <span>Sua pontuação</span>
+                    <strong id="pontuacao-final">0</strong>
+                </div>
+
+                <div class="resumo">
+                    <div>
+                        <span>Acertos</span>
+                        <strong id="acertos-final">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Erros</span>
+                        <strong id="erros-final">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Aproveitamento</span>
+                        <strong id="porcentagem-final">0%</strong>
+                    </div>
+                </div>
+
+                <button id="reiniciar" class="btn-reiniciar">
+                    🔄 Fazer novamente
+                </button>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
